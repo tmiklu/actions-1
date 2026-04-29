@@ -6,7 +6,7 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout private tools
+            - name: Checkout repo
               uses: actions/checkout@v6
 
             - name: Welcome message
