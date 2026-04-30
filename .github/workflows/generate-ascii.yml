@@ -10,4 +10,4 @@ jobs:
               uses: actions/checkout@v6
 
             - name: Install cowsay
-              run: apt install cowsay -y
+              run: sudo apt-get install cowsay -y
