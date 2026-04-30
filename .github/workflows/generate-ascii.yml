@@ -15,7 +15,7 @@ jobs:
 
             - name: Execute cowsay
               run: |
-                cowsay -f "Run for cover, I am a DRAGON" > dragon.txt
+                cowsay -f dragon "Run for cover, I am a DRAGON" > dragon.txt
 
     test_job:
         runs-on: ubuntu-latest
