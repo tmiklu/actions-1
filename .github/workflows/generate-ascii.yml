@@ -39,6 +39,11 @@ jobs:
         needs: test_job
         runs-on: ubuntu-latest
         steps:
+            - name: Download a Build Artifact
+              uses: actions/download-artifact@v8.0.1
+              with:
+                name: artifact
+
             - name: Read file
               run: |
                 cat dragon.txt 
