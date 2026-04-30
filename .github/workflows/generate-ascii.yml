@@ -11,3 +11,6 @@ jobs:
 
             - name: Install cowsay
               run: sudo apt-get install cowsay -y
+
+            - name: Execute cowsay
+              run: cowsay
