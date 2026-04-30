@@ -3,14 +3,32 @@ name: Generate ASCII
 on: push
 
 jobs:
-    cowsay:
+    build_job:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repo
               uses: actions/checkout@v6
 
-            - name: List directory
-              run: ls -lha
+            - name: Install cowsay
+              run: |
+                sudo apt-get install cowsay -y
 
-            - name: Execute script
-              run: ./script.bash
+            - name: Execute cowsay
+              run: |
+                cowsay -f "Run for cover, I\'m DRAGON" >> dragon.txt
+
+    test_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Test file exists
+              run: |
+                grep -i dragon dragon.txt
+
+    deploy_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Read file
+              run: |
+                cat dragon.txt 
+            - name: Deployment
+              run: echo "Deploying..."              
