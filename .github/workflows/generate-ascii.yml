@@ -1,0 +1,13 @@
+name: Generate ASCII
+
+on: push
+
+jobs:
+    cowsay:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v6
+
+            - name: Install cowsay
+              run: apt install cowsay -y
